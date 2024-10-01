@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+    <style>
+        * {
+            text-decoration: none;
+            font-family: 'Arial';
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: whitesmoke;
+        }
+
+        header {
+            height: 50vh;
+            background-image: url('hero.png');
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        #headerLogo {
+            color: whitesmoke;
+            font-size: 50px;
+            margin-top: 20px;
+            height: 50px;
+        }
+
+        .link {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            margin: 0 auto;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            opacity: 70%;
+        }
+
+
+        #homeSection {
+            margin: 90px 100px;
+            background-color: #ffffff;
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding: 30px 0px;
+        }
+
+
+        #footer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #111111;
+            color: whitesmoke;
+            height: 200px;
+        }
+
+        ul,
+        h2,
+        h1,
+        h3 {
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            #homeSection {
+                margin: 20px 10px;
+                /* Remove horizontal margin */
+                flex-direction: column;
+                /* Stack content vertically */
+                text-align: center;
+                align-items: center;
+                height: auto;
+                padding-bottom: 130px;
+                padding-top: 130px;
+            }
+
+            #homeImg {
+                margin: 0 0 20px 0;
+                /* Adjust image margin for mobile */
+                width: auto;
+                /* Make the image more fluid on mobile */
+            }
+
+            #bodyText {
+                font-size: 15px;
+                /* Decrease font size for mobile */
+            }
+
+            #headerLogo {
+                font-size: 40px;
+                /* Make logo smaller for mobile */
+            }
+
+            header {
+                height: 30vh;
+                /* Reduce the height of the header for mobile */
+                background-position: center;
+                /* Adjust background position */
+            }
+
+            #footer {
+                height: auto;
+                /* Let footer height adjust based on content */
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a id="headerLogo" href="index.html">
+            NOKU </a>
+    </header>
+
+    <section id="homeSection">
+        <h1>NOKU Restaurant Menu</h1>
+
+        <br>
+
+        <h2>Appetizers</h2>
+        <ul>
+            <li>Edamame (Steamed Soybeans) – $5.00</li>
+            <li>Gyoza (Pan-Fried Dumplings) – $6.50</li>
+            <li>Agedashi Tofu (Fried Tofu in Broth) – $6.00</li>
+            <li>Miso Soup – $3.50</li>
+            <li>Seaweed Salad – $5.00</li>
+            <li>Shrimp Tempura (5 pieces) – $8.00</li>
+            <li>Soft Shell Crab – $9.50</li>
+        </ul>
+
+        <br>
+        <h2>Salads</h2>
+        <ul>
+            <li>House Salad (with Ginger Dressing) – $4.50</li>
+            <li>Cucumber Sunomono (Marinated Cucumber Salad) – $5.00</li>
+            <li>Sashimi Salad (Mixed Greens, Sliced Sashimi) – $12.00</li>
+            <li>Avocado and Crab Salad – $9.50</li>
+        </ul>
+
+        <h2>Nigiri Sushi (2 pieces per order)</h2>
+        <ul>
+            <li>Maguro (Tuna) – $6.00</li>
+            <li>Sake (Salmon) – $5.50</li>
+            <li>Hamachi (Yellowtail) – $6.50</li>
+            <li>Unagi (Eel) – $7.00</li>
+            <li>Ebi (Shrimp) – $5.00</li>
+            <li>Hotate (Scallop) – $6.50</li>
+            <li>Ikura (Salmon Roe) – $7.50</li>
+            <li>Tamago (Sweet Egg) – $4.00</li>
+        </ul>
+        <br>
+
+        <h2>Sashimi (5 pieces per order)</h2>
+        <ul>
+            <li>Maguro (Tuna) – $12.00</li>
+            <li>Sake (Salmon) – $11.00</li>
+            <li>Hamachi (Yellowtail) – $13.00</li>
+            <li>Unagi (Eel) – $14.00</li>
+            <li>Hotate (Scallop) – $13.00</li>
+        </ul>
+        <br>
+
+        <h2>Sushi Rolls</h2>
+
+        <h3>Classic Rolls</h3>
+        <ul>
+            <li>California Roll (Crab, Avocado, Cucumber) – $7.50</li>
+            <li>Spicy Tuna Roll – $8.00</li>
+            <li>Spicy Salmon Roll – $7.50</li>
+            <li>Shrimp Tempura Roll – $9.00</li>
+            <li>Philadelphia Roll (Salmon, Cream Cheese, Avocado) – $8.50</li>
+            <li>Unagi Roll (Eel, Avocado, Cucumber) – $9.00</li>
+            <li>Vegetarian Roll (Cucumber, Avocado, Asparagus) – $6.50</li>
+        </ul>
+        <br>
+
+        <h3>Special Rolls</h3>
+        <ul>
+            <li>Dragon Roll (Eel, Cucumber topped with Avocado, Unagi Sauce) – $14.00</li>
+            <li>Rainbow Roll (California Roll topped with Tuna, Salmon, Shrimp) – $15.00</li>
+            <li>Spider Roll (Soft Shell Crab, Avocado, Cucumber) – $14.50</li>
+            <li>Dynamite Roll (Spicy Tuna, Jalapeño, Tempura Crunch) – $13.00</li>
+            <li>Volcano Roll (Baked Crab, Spicy Mayo, Masago) – $14.00</li>
+        </ul>
+        <br>
+
+        <h2>Entrées</h2>
+        <ul>
+            <li>Teriyaki Chicken – $13.50</li>
+            <li>Teriyaki Beef – $15.50</li>
+            <li>Teriyaki Salmon – $16.00</li>
+            <li>Tempura Udon (Noodle Soup with Shrimp Tempura) – $12.50</li>
+            <li>Sushi Dinner (7 pieces Nigiri, California Roll) – $20.00</li>
+            <li>Sashimi Dinner (12 pieces Assorted Sashimi) – $23.00</li>
+            <li>Chirashi Bowl (Assorted Sashimi over Rice) – $19.50</li>
+        </ul>
+        <br>
+
+        <h2>Beverages</h2>
+        <ul>
+            <li>Green Tea – $2.50</li>
+            <li>Soft Drinks – $2.00</li>
+            <li>Japanese Soda (Ramune) – $3.50</li>
+            <li>Sake (Hot or Cold) – $7.00</li>
+            <li>Japanese Beer (Asahi, Sapporo) – $6.00</li>
+        </ul>
+        <br>
+
+        <h2>Desserts</h2>
+        <ul>
+            <li>Mochi Ice Cream (Green Tea, Strawberry, Mango) – $5.00</li>
+            <li>Tempura Ice Cream – $6.50</li>
+            <li>Matcha Cheesecake – $6.00</li>
+        </ul>
+
+    </section>
+    <section id="footer">
+        <p style="align-self: center; margin:10px;">Have any question?</p>
+        <a class="link" href="contact.html" style="color:whitesmoke">Contact Us</a>
+    </section>
+
+
+</body>
+
+</html>

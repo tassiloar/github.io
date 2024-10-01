@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <style>
+        * {
+            text-decoration: none;
+            font-family: 'Arial';
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: whitesmoke;
+        }
+
+        header {
+            height: 50vh;
+            background-image: url('hero.png');
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+        }
+
+        #headerLogo {
+            color: whitesmoke;
+            font-size: 50px;
+            margin-top: 20px;
+            height: 50px;
+        }
+
+        .link {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            margin: 0 auto;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            opacity: 70%;
+        }
+
+
+        #homeSection {
+            margin: 90px 100px;
+            background-color: #ffffff;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        #footer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #111111;
+            color: whitesmoke;
+            height: 200px;
+        }
+
+        #form {
+            align-self: center;
+            padding: 100px 0;
+        }
+
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        input {
+            width: 280px;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        #button {
+            width: 60px;
+        }
+
+        @media (max-width: 768px) {
+            #homeSection {
+                margin: 20px 10px;
+                /* Remove horizontal margin */
+                flex-direction: column;
+                /* Stack content vertically */
+                text-align: center;
+                align-items: center;
+                height: auto;
+                padding-bottom: 130px;
+                padding-top: 130px;
+            }
+
+            #homeImg {
+                margin: 0 0 20px 0;
+                /* Adjust image margin for mobile */
+                width: auto;
+                /* Make the image more fluid on mobile */
+            }
+
+            #bodyText {
+                font-size: 15px;
+                /* Decrease font size for mobile */
+            }
+
+            #headerLogo {
+                font-size: 40px;
+                /* Make logo smaller for mobile */
+            }
+
+            header {
+                height: 30vh;
+                /* Reduce the height of the header for mobile */
+                background-position: center;
+                /* Adjust background position */
+            }
+
+            #footer {
+                height: auto;
+                /* Let footer height adjust based on content */
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a id="headerLogo" href="index.html">
+            NOKU </a>
+    </header>
+
+    <section id="homeSection">
+        <h1>Contact Us</h1>
+        <form id="form" action="#">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" cols="40" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" cols="40" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="10" cols="40" required></textarea><br><br>
+
+            <button id="button" type="submit">Submit</button>
+        </form>
+    </section>
+    <section id="footer">
+        <p style="align-self: center; margin:10px;">Have any question?</p>
+        <a class="link" href="contact.html" style="color:whitesmoke">Contact Us</a>
+    </section>
+
+
+</body>
+
+</html>

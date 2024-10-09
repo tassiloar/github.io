@@ -4,68 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Joe's Hotdog Stand</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #d35400;
+            text-align: center;
+        }
+
+        .order-summary {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+        }
+
+        .total {
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+    </style>
 </head>
 
 <body>
 
-    <script>
+    <h1>Joe's Hotdog Stand</h1>
 
-        const hotdogs = 4.8;
-        const frenchFries = 3.95;
-        const drinks = 1.99;
+    <div class="order-summary">
+        <script>
+            const hotdogs = 4.8;
+            const frenchFries = 3.95;
+            const drinks = 1.99;
 
-        let numDogs = prompt("How many Hot Dogs do you want:");
-        let numFries = prompt("How many French Fries do you want:");
-        let numSoda = prompt("How many Sodas do you want:");
+            let numDogs = prompt("How many Hot Dogs do you want:");
+            let numFries = prompt("How many French Fries do you want:");
+            let numSoda = prompt("How many Sodas do you want:");
 
-        //Calc total
-        const totalOriginal = (numDogs * hotdogs) + (numFries * frenchFries) + (numSoda * drinks);
-        let discount = 0;
+            // Calculate total
+            const totalOriginal = (numDogs * hotdogs) + (numFries * frenchFries) + (numSoda * drinks);
+            let discount = 0;
 
-        //Apply discount
-        if (totalOriginal >= 25) {
-            discount = total * 0.1;
-        }
-
-        const totalAfterDiscount = totalOriginal - discount;
-
-        const taxAmount = totalAfterDiscount * 0.0625
-
-        const finalTotal = totalAfterDiscount + taxAmount;
-
-        document.write("Qty of Hot dogs: " + numDogs + ",    Total: " + showMoney(numDogs * hotdogs) + "<br>");
-        document.write("Qty of French Fries: " + numFries + ",    Total: " + showMoney(numFries * frenchFries) + "<br>");
-        document.write("Qty of Drinks: " + numSoda + ",    Total: " + showMoney(numSoda * drinks) + "<br>");
-        document.write("Subtotal before discount:" + showMoney(totalOriginal) + "<br>");
-        document.write("Discount if applicable: " + showMoney(discount) + "<br>");
-        document.write("Subtotal after discount: " + showMoney(totalAfterDiscount) + "<br>");
-        document.write("Tax amount: " + showMoney(taxAmount) + "<br>");
-        document.write("Final amount" + showMoney(finalTotal) + "<br>");
-
-
-
-        function showMoney(number) {
-            let roundedNumber = Math.round(number * 100) / 100;
-
-            let result = roundedNumber.toString();
-
-            if (result.indexOf('.') === -1) {
-                result += '.00';
+            // Apply discount if total is greater than or equal to $25
+            if (totalOriginal >= 25) {
+                discount = totalOriginal * 0.1;
             }
 
-            else {
-                let decimalPart = result.split('.')[1];
-                if (decimalPart.length === 1) {
-                    result += '0';
+            const totalAfterDiscount = totalOriginal - discount;
+            const taxAmount = totalAfterDiscount * 0.0625;
+            const finalTotal = totalAfterDiscount + taxAmount;
+
+            // Display the order summary
+            document.write("<p>Qty of Hotdogs: " + numDogs + ", Total: $" + showMoney(numDogs * hotdogs) + "</p>");
+            document.write("<p>Qty of French Fries: " + numFries + ", Total: $" + showMoney(numFries * frenchFries) + "</p>");
+            document.write("<p>Qty of Drinks: " + numSoda + ", Total: $" + showMoney(numSoda * drinks) + "</p>");
+            document.write("<p>Subtotal before discount: $" + showMoney(totalOriginal) + "</p>");
+            document.write("<p>Discount (if applicable): $" + showMoney(discount) + "</p>");
+            document.write("<p>Subtotal after discount: $" + showMoney(totalAfterDiscount) + "</p>");
+            document.write("<p>Tax amount: $" + showMoney(taxAmount) + "</p>");
+            document.write("<p class='total'>Final amount: $" + showMoney(finalTotal) + "</p>");
+
+            // Function to round numbers to two decimal places
+            function showMoney(number) {
+                let roundedNumber = Math.round(number * 100) / 100;
+                let result = roundedNumber.toString();
+
+                if (result.indexOf('.') === -1) {
+                    result += '.00';
+                } else {
+                    let decimalPart = result.split('.')[1];
+                    if (decimalPart.length === 1) {
+                        result += '0';
+                    }
                 }
+
+                return result;
             }
 
-            return result;
-        }
-
-
-    </script>
+        </script>
+    </div>
 
 </body>
 

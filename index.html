@@ -11,38 +11,41 @@
 
     <script>
 
-        const hotdogs = 4.8;
-        const frenchFries = 3.95;
-        const drinks = 1.99;
+        const items = {
+            "Hotdogs": 4.80,
+            "Fries": 3.95,
+            "Soda": 1.99
+        };
 
-        let numDogs = prompt("How many Hot Dogs do you want:");
-        let numFries = prompt("How many French Fries do you want:");
-        let numSoda = prompt("How many Sodas do you want:");
+        let quantities = {};
 
-        //Calc total
-        const totalOriginal = (numDogs * hotdogs) + (numFries * frenchFries) + (numSoda * drinks);
+        for (let item in items) {
+            let quantity = parseInt(prompt(`How many ${item} would you like?`));
+            quantities[item] = quantity;
+        }
+
+        let total = 0;
+        for (let item in items) {
+            total += quantities[item] * items[item];
+        }
+
         let discount = 0;
-
-        //Apply discount
-        if (totalOriginal >= 25) {
+        if (total >= 25) {
             discount = total * 0.1;
         }
 
-        const totalAfterDiscount = totalOriginal - discount;
-
-        const taxAmount = totalAfterDiscount * 0.0625
-
+        const totalAfterDiscount = total - discount;
+        const taxAmount = totalAfterDiscount * 0.0625;
         const finalTotal = totalAfterDiscount + taxAmount;
 
-        document.write("Qty of Hot dogs: " + numDogs + ",    Total: " + showMoney(numDogs * hotdogs) + "<br>");
-        document.write("Qty of French Fries: " + numFries + ",    Total: " + showMoney(numFries * frenchFries) + "<br>");
-        document.write("Qty of Drinks: " + numSoda + ",    Total: " + showMoney(numSoda * drinks) + "<br>");
-        document.write("Subtotal before discount:" + showMoney(totalOriginal) + "<br>");
-        document.write("Discount if applicable: " + showMoney(discount) + "<br>");
-        document.write("Subtotal after discount: " + showMoney(totalAfterDiscount) + "<br>");
-        document.write("Tax amount: " + showMoney(taxAmount) + "<br>");
-        document.write("Final amount" + showMoney(finalTotal) + "<br>");
-
+        document.write("Qty of Hotdogs: " + quantities["Hotdogs"] + ",    Total: $" + showMoney(quantities["Hotdogs"] * items["Hotdogs"]) + "<br>");
+        document.write("Qty of French Fries: " + quantities["Fries"] + ",    Total: $" + showMoney(quantities["Fries"] * items["Fries"]) + "<br>");
+        document.write("Qty of Drinks: " + quantities["Soda"] + ",    Total: $" + showMoney(quantities["Soda"] * items["Soda"]) + "<br>");
+        document.write("Subtotal before discount: $" + showMoney(total) + "<br>");
+        document.write("Discount (if applicable): $" + showMoney(discount) + "<br>");
+        document.write("Subtotal after discount: $" + showMoney(totalAfterDiscount) + "<br>");
+        document.write("Tax amount: $" + showMoney(taxAmount) + "<br>");
+        document.write("Final amount: $" + showMoney(finalTotal) + "<br>");
 
 
         function showMoney(number) {

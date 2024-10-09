@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const hotdogs = 4.8;
+        const frenchFries = 3.95;
+        const drinks = 1.99;
+
+        let numDogs = prompt("How many Hot Dogs do you want:");
+        let numFries = prompt("How many French Fries do you want:");
+        let numSoda = prompt("How many Sodas do you want:");
+
+        //Calc total
+        const totalOriginal = (numDogs * hotdogs) + (numFries * frenchFries) + (numSoda * drinks);
+        let discount = 0;
+
+        //Apply discount
+        if (totalOriginal >= 25) {
+            discount = total * 0.1;
+        }
+
+        const totalAfterDiscount = totalOriginal - discount;
+
+        const taxAmount = totalAfterDiscount * 0.0625
+
+        const finalTotal = totalAfterDiscount + taxAmount;
+
+        document.write("Qty of Hot dogs: " + numDogs + ",    Total: " + showMoney(numDogs * hotdogs) + "<br>");
+        document.write("Qty of French Fries: " + numFries + ",    Total: " + showMoney(numFries * frenchFries) + "<br>");
+        document.write("Qty of Drinks: " + numSoda + ",    Total: " + showMoney(numSoda * drinks) + "<br>");
+        document.write("Subtotal before discount:" + showMoney(totalOriginal) + "<br>");
+        document.write("Discount if applicable: " + showMoney(discount) + "<br>");
+        document.write("Subtotal after discount: " + showMoney(totalAfterDiscount) + "<br>");
+        document.write("Tax amount: " + showMoney(taxAmount) + "<br>");
+        document.write("Final amount" + showMoney(finalTotal) + "<br>");
+
+
+
+        function showMoney(number) {
+            let roundedNumber = Math.round(number * 100) / 100;
+
+            let result = roundedNumber.toString();
+
+            if (result.indexOf('.') === -1) {
+                result += '.00';
+            }
+
+            else {
+                let decimalPart = result.split('.')[1];
+                if (decimalPart.length === 1) {
+                    result += '0';
+                }
+            }
+
+            return result;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
